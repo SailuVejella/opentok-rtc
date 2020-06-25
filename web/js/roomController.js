@@ -863,6 +863,7 @@ PhoneNumberController, ResizeSensor, maxUsersPerRoom */
     .then(function () {
       return PrecallController.init();
     })
+    .then(loadHotjar())
     .then(function () {
       return LazyLoader.load('/js/helpers/OTHelper.js');
     })
@@ -989,7 +990,6 @@ PhoneNumberController, ResizeSensor, maxUsersPerRoom */
           debug.error('Error Connecting to room. ' + error.message);
         });
     })
-  .then(loadHotjar());
   };
 
   var RoomController = {
